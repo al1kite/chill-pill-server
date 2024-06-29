@@ -1,0 +1,27 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/finalreport?autoReconnect=true
+    username: root
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MariaDBDialect
+          format_sql: true
+          use_sql_comments: true
+
+mongo:
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.9
+      database: finalreport
+
+jwt:
+  secret: secretKey-authorization-jwt-manage-token
